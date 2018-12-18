@@ -15,6 +15,31 @@
     <script src="{% static "plotrequest/js/bootstrap-3.3.7.min.js" %}"></script>
     <script src="{% static "plotrequest/js/moment-2.17.1.min.js" %}"></script>
     <script src="{% static "plotrequest/js/bootstrap-datetimepicker-4.17.44.min.js" %}"></script>
+    <script src="https://maps.google.com/maps/api/js"></script>
+<!-- Google Maps settings -->
+<script>
+  // Regular map
+  function regular_map() {
+    var var_location = new google.maps.LatLng(-7.798101, 110.384636);
+
+    var var_mapoptions = {
+      center: var_location,
+      zoom: 14
+    };
+
+    var var_map = new google.maps.Map(document.getElementById("map-container"),
+      var_mapoptions);
+
+    var var_marker = new google.maps.Marker({
+      position: var_location,
+      map: var_map,
+      title: "BPPTKG"
+    });
+  }
+
+  // Initialize maps
+  google.maps.event.addDomListener(window, 'load', regular_map);
+</script>
 </head>
 <body>
     <!-- Header -->
@@ -90,6 +115,9 @@
         </div>
     </div>
     <hr class="my-5">
+        <div id="map-container" class="z-depth-1-half map-container mb-5" style="height: 400px"></div>
+    <!--Google Maps-->
+
     <div class="footer-bottom">
                 <div class="row">
                     <div class="col-lg-4 store-links text-center text-lg-left pb-3 pb-lg-0">></div>
