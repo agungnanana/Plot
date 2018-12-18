@@ -1,0 +1,11 @@
+{% for field in form.visible_fields %}
+    <div class="form-group">
+        {{ field.label_tag }}
+        <div class='input-group date' id="{{ field.html_name }}">
+            {{ field }}
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
+    </div>
+{% endfor %}

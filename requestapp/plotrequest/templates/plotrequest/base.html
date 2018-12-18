@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static "plotrequest/img/logo.jpg" %}" rel="shortcut icon"/>
+    <title>Plot Request App</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static "plotrequest/css/bootstrap.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "plotrequest/css/bootstrap-datetimepicker-4.17.44.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "plotrequest/css/style.css" %}">
+
+    <script src="{% static "plotrequest/js/jquery-3.0.0.min.js" %}"></script>
+    <script src="{% static "plotrequest/js/bootstrap-3.3.7.min.js" %}"></script>
+    <script src="{% static "plotrequest/js/moment-2.17.1.min.js" %}"></script>
+    <script src="{% static "plotrequest/js/bootstrap-datetimepicker-4.17.44.min.js" %}"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+<nav class="navbar top-nav-collapse scrolling-navbar fixed-top">
+  <a class="navbar-brand" href="#">
+    <img src="{% static "plotrequest/img/logo-bpptkg.png" %}" width="50" height="50" class="d-inline-block align-top" alt="">
+  </a>
+  <nav class="navbar-brands">BPPTKG</nav>
+</nav>
+<div id="includeHeader"></div>
+    <header>
+        <div class="bgimg-1">
+  <div class="caption">
+  <span class="border">SELAMAT DATANG</span>
+  <H2>MENYEDIAKAN INFORMASI SEPUTAR KEBENCAAN</H2>
+  </div>
+</div>
+    </header>
+    <!-- End Of Header -->
+    <!-- Fitur -->
+        <section class="features-section spad gradient-bg">
+        <div class="container text-white">
+            <div class="section-title text-center">
+                <h2>Fitur Kami</h2>
+                <p>BPPTKG menyediakan beberapa fitur yang dapat anda akses disini</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 feature">
+                    <div class="feature-content">
+                        <h4>Instagram BPPTKG</h4>
+                        <a href="https://www.instagram.com/bpptkg/?hl=en" class="readmore">Readmore</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 feature">
+                    <div class="feature-content">
+                        <h4>Informasi Merapi</h4>
+                        <a href="http://merapi.geologi.esdm.go.id/" class="readmore">Readmore</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 feature">
+                    <div class="feature-content">
+                        <h4>Twitter BPPTKG</h4>
+                        <a href="https://twitter.com/BPPTKG?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="readmore">Readmore</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Fitur -->
+
+    <hr class="my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group">
+                    <div class="list-group-item list-group-header">
+                        Parameter Settings
+                    </div>
+                    <div class="list-group-item">
+                        {% block forms %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9" id="graph">
+                <div class="graph-area">
+                    {% block graph %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="my-5">
+    <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-lg-4 store-links text-center text-lg-left pb-3 pb-lg-0">></div>
+                    <div class="col-lg-8 text-center text-lg-right">
+                        <ul class="footer-nav">
+                            <li><a href="">Hak Cipta</a></li>
+                            <li><a href="">Undang-Undang</a></li>
+                            <li><a href="">merapi-bgl-esdm.go.id</a></li>
+                            <li><a href="">081xxxxxxx</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script type="text/javascript" src="{% static "plotrequest/js/script.js" %}"></script>
+    <script type="text/javascript" src="{% static "plotrequest/js/date.js" %}"></script>
+    <script type="text/javascript" src="{% static "plotrequest/js/options.js" %}"></script>
+
+</body>
+</html>

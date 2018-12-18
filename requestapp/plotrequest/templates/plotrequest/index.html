@@ -1,0 +1,32 @@
+{% extends "plotrequest/base.html" %}
+
+{% block forms %}
+<form method="POST" role="form" id="requestform" date="{% url 'date' %}" options="{% url 'options' %}" action="{{ url_data }}">
+  {% for field in form.visible_fields %}
+      <div class="form-group">
+          {{ field.label_tag }}
+          <div class='input-group date' id='{{ field.html_name }}'>
+              {{ field }}
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
+      </div>
+  {% endfor %}
+    <div id="date_range"></div>
+
+     {% csrf_token %}
+
+    <div class="form-group" id="graph_choices">
+        {{ graphform }}
+    </div>
+
+    <div class="form-group" id="options"></div>
+
+    <div class="form-group">
+        <div class="text-center">
+            <input type="submit" value="Submit" class="btn btn-secondary ra-btn" />
+        </div>
+    </div>
+</form>
+{% endblock %}
